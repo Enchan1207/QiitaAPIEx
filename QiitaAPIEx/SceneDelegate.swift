@@ -11,6 +11,17 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    // カスタムURLスキームによってアプリが呼び出されたとき
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let callBackURL = URLContexts.first?.url, let sourceApp = URLContexts.first?.options.sourceApplication else { return }
+        
+        // ViewControllerの呼び出し元がSFSafariserviceなら、コールバックURLにアクセストークンを乗せて返す
+        if(sourceApp == "com.apple.SafariViewService") {
+            NotificationCenter.default.post(name: ViewController.AuthorizeCloseNotification, object: callBackURL)
+        }
+
+    }
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

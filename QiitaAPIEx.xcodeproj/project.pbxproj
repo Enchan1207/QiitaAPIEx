@@ -14,6 +14,8 @@
 		9E75E7D624B5A47800CA0E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E75E7D524B5A47800CA0E9B /* Assets.xcassets */; };
 		9E75E7D924B5A47800CA0E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E75E7D724B5A47800CA0E9B /* LaunchScreen.storyboard */; };
 		9E75E7E424B5A47800CA0E9B /* QiitaAPIExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7E324B5A47800CA0E9B /* QiitaAPIExTests.swift */; };
+		9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */; };
+		9E75E7F124B5EC9300CA0E9B /* tokenStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		9E75E7DF24B5A47800CA0E9B /* QiitaAPIExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiitaAPIExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E75E7E324B5A47800CA0E9B /* QiitaAPIExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIExTests.swift; sourceTree = "<group>"; };
 		9E75E7E524B5A47800CA0E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				9E75E7CC24B5A47300CA0E9B /* AppDelegate.swift */,
 				9E75E7CE24B5A47300CA0E9B /* SceneDelegate.swift */,
 				9E75E7D024B5A47300CA0E9B /* ViewController.swift */,
+				9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */,
+				9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */,
 				9E75E7D224B5A47300CA0E9B /* Main.storyboard */,
 				9E75E7D524B5A47800CA0E9B /* Assets.xcassets */,
 				9E75E7D724B5A47800CA0E9B /* LaunchScreen.storyboard */,
@@ -202,6 +208,8 @@
 			files = (
 				9E75E7D124B5A47300CA0E9B /* ViewController.swift in Sources */,
 				9E75E7CD24B5A47300CA0E9B /* AppDelegate.swift in Sources */,
+				9E75E7F124B5EC9300CA0E9B /* tokenStruct.swift in Sources */,
+				9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */,
 				9E75E7CF24B5A47300CA0E9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
