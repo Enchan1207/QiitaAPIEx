@@ -14,7 +14,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var authorizeLabel: UILabel!
     
     private var token: AccessToken?
-    private let qiitaKit = QiitaKit()
+    private let qiitaKit = Swiita()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     
     @IBAction func onTapAuthorize(_ sender: Any) {
-        self.qiitaKit.authorize(presentViewController: self, success: { (token) in
+        self.qiitaKit.authorize(presentViewController: self, scope: "read_qiita+write_qiita", success: { (token) in
             print(token)
         }) { (error) in
             print(error)

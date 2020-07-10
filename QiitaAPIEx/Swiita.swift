@@ -1,5 +1,5 @@
 //
-//  QiitaKit.swift
+//  Swiita.swift
 //  QiitaAPIEx
 //
 //  Created by EnchantCode on 2020/07/10.
@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 import SafariServices
 
-class QiitaKit{
+class Swiita{
     internal let clientid = "bf0f661c452a2c20fe9f81c4a87225a76b84adb1"
     internal let clientsecret = "7367b74ae862bea330f45ccd2ff8269ed8e451a1"
-    internal var state: String?
     
+    internal var state: String?
     internal var safariViewController: SFSafariViewController!
     internal var notifyProtocol: NSObjectProtocol?
     
@@ -28,7 +28,7 @@ class QiitaKit{
     }
     
     // 認証画面を開く
-    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void){
+    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, scope: String, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void){
         // safariViewControllerを閉じるためのobserberを設定
         self.notifyProtocol = NotificationCenter.default.addObserver(forName: .qiitaKitAuthCallback, object: nil, queue: .main) { (notification) in
             
@@ -55,9 +55,6 @@ class QiitaKit{
                 NotificationCenter.default.removeObserver(notifyProtocol)
             }
         }
-        
-        // 認証情報
-        let scope = "read_qiita+write_qiita"
         
         // URL生成
         self.state = NSUUID().uuidString.regexReplace(pattern: "-", replace: "")

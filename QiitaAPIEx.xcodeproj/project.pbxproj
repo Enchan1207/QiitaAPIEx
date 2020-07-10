@@ -16,7 +16,7 @@
 		9E75E7E424B5A47800CA0E9B /* QiitaAPIExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7E324B5A47800CA0E9B /* QiitaAPIExTests.swift */; };
 		9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */; };
 		9E75E7F124B5EC9300CA0E9B /* tokenStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */; };
-		9E75E87024B7DDDE00CA0E9B /* QiitaKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E86F24B7DDDE00CA0E9B /* QiitaKit.swift */; };
+		9E75E87024B7DDDE00CA0E9B /* Swiita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */; };
 		9E75E87224B83F7800CA0E9B /* NotificationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87124B83F7800CA0E9B /* NotificationExt.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		9E75E7E524B5A47800CA0E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenStruct.swift; sourceTree = "<group>"; };
-		9E75E86F24B7DDDE00CA0E9B /* QiitaKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaKit.swift; sourceTree = "<group>"; };
+		9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiita.swift; sourceTree = "<group>"; };
 		9E75E87124B83F7800CA0E9B /* NotificationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +90,7 @@
 				9E75E7CC24B5A47300CA0E9B /* AppDelegate.swift */,
 				9E75E7CE24B5A47300CA0E9B /* SceneDelegate.swift */,
 				9E75E87124B83F7800CA0E9B /* NotificationExt.swift */,
-				9E75E86F24B7DDDE00CA0E9B /* QiitaKit.swift */,
+				9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */,
 				9E75E7D024B5A47300CA0E9B /* ViewController.swift */,
 				9E75E7F024B5EC9300CA0E9B /* tokenStruct.swift */,
 				9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */,
@@ -214,7 +214,7 @@
 			files = (
 				9E75E7D124B5A47300CA0E9B /* ViewController.swift in Sources */,
 				9E75E87224B83F7800CA0E9B /* NotificationExt.swift in Sources */,
-				9E75E87024B7DDDE00CA0E9B /* QiitaKit.swift in Sources */,
+				9E75E87024B7DDDE00CA0E9B /* Swiita.swift in Sources */,
 				9E75E7CD24B5A47300CA0E9B /* AppDelegate.swift in Sources */,
 				9E75E7F124B5EC9300CA0E9B /* tokenStruct.swift in Sources */,
 				9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */,

@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // カスタムURLスキームによってアプリが呼び出されたとき
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>){
-        QiitaKit.handleCallback(URLContexts: URLContexts, callBack: URL(string: "qiip://success")!)
+        Swiita.handleCallback(URLContexts: URLContexts, callBack: URL(string: "qiip://success")!)
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
