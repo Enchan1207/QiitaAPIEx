@@ -20,8 +20,14 @@ class QiitaAPIExTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var path = URL(string: "https://qiita.com")!
+        path.appendPathComponent("/api/v2/auth")
+        
+        var params: [String: String] = [:]
+        params["content-type"] = "json"
+        params["content-size"] = "114514"
+        print(path.setParams(params))
+        
     }
 
     func testPerformanceExample() throws {

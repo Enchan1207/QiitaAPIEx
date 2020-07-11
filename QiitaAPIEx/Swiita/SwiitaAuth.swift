@@ -1,5 +1,5 @@
 //
-//  Swiita.swift
+//  SwiitaAuth.swift
 //  QiitaAPIEx
 //
 //  Created by EnchantCode on 2020/07/10.
@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 import SafariServices
 
-class Swiita{
-    internal let clientid = "bf0f661c452a2c20fe9f81c4a87225a76b84adb1"
-    internal let clientsecret = "7367b74ae862bea330f45ccd2ff8269ed8e451a1"
+extension Swiita {
     
-    internal var state: String?
-    internal var safariViewController: SFSafariViewController!
-    internal var notifyProtocol: NSObjectProtocol?
-    
-    // コールバックのハンドリング
+    /// Handling of callback URL.
+    ///
+    /// - Parameters:
+    ///   - URLContexts: `openURLContexts` in `SceneDelegate.swift`
+    ///   - callBack: callback URL registed Qiita
     static func handleCallback(URLContexts: Set<UIOpenURLContext>, callBack: URL){
         // QiitaKitのコールバックURLなら認証画面を閉じるリクエストと判断、NotificationCenterで通知
         guard let url = URLContexts.first?.url else { return }
@@ -27,8 +25,17 @@ class Swiita{
         }
     }
     
-    // 認証画面を開く
-    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, scope: String, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void){
+    /// Open authentication screen.
+    ///
+    /// - Parameters:
+    ///   - presentViewController: View controller that show SKSafariView
+    ///   - authority: the access  authority of Qiita APIs
+    ///   - success: callback when authenticate succeeded.
+    ///   - failure: callback when authenticate failed.
+    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, authority: [qiitaAPIAuthority], success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void){
+        
+        /// TODO: CSRF対策文字列の生成方法
+        let state = NSUUID().uuidString.regexReplace(pattern: "-", replace: "")
         // safariViewControllerを閉じるためのobserberを設定
         self.notifyProtocol = NotificationCenter.default.addObserver(forName: .qiitaKitAuthCallback, object: nil, queue: .main) { (notification) in
             
@@ -38,7 +45,7 @@ class Swiita{
             var query = [String: String]()
             queries.forEach { query[$0.name] = $0.value }
             
-            self.generateAccessToken(code: query["code"]!, state: query["state"]!, success: { (token) in
+            self.generateAccessToken(code: query["code"]!, clientState: state, responseState: query["state"]!, success: { (token) in
                 DispatchQueue.main.sync {
                     self.safariViewController.dismiss(animated: true, completion: nil)
                 }
@@ -57,12 +64,12 @@ class Swiita{
         }
         
         // URL生成
-        self.state = NSUUID().uuidString.regexReplace(pattern: "-", replace: "")
-        let params = "client_id=\(self.clientid)&scope=\(scope)&state=\(self.state!)"
-        let authurl = URL(string: "https://qiita.com/api/v2/oauth/authorize" + "?" + params)
+        let scope = authority.map { $0.rawValue }.joined(separator: "+")
+        let parameters: [String: String] = ["client_id": self.clientid, "scope": scope, "state": state]
+        let authurl = self.apihost.appendingPathComponent("/api/v2/oauth/authorize").setParams(parameters)!
         
-        // safariViewControllerで開く
-        safariViewController = SFSafariViewController(url: authurl!)
+        // safariViewControllerで認証ウィンドウを開く
+        safariViewController = SFSafariViewController(url: authurl)
         safariViewController.modalPresentationStyle = .automatic
         safariViewController.delegate = safariDelegate
         
@@ -70,18 +77,18 @@ class Swiita{
     }
     
     // code, stateからアクセストークンを引っ張る
-    func generateAccessToken(code: String, state: String, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void) {
+    internal func generateAccessToken(code: String, clientState: String, responseState:String, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void) {
         // CSRF的に問題なければ、codeを認証情報としてアクセストークンを取得
         if (state != self.state) { return }
-        struct RequestBody: Codable {
+        struct TokenRequestParams: Codable {
             let client_id: String
             let client_secret: String
             let code: String
         }
-        let requestBody = String(data: try! JSONEncoder().encode(RequestBody(client_id: self.clientid, client_secret: self.clientsecret, code: code)), encoding: .utf8)!
+        let requestBody = String(data: try! JSONEncoder().encode(TokenRequestParams(client_id: self.clientid, client_secret: self.clientsecret, code: code)), encoding: .utf8)!
         
-        let url = URL(string: "https://qiita.com/api/v2/access_tokens")
-        var request = URLRequest(url: url!)
+        let url = self.apihost.appendingPathComponent("/api/v2/access_tokens")
+        var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         request.httpMethod = "POST"
         request.httpBody = requestBody.data(using: .utf8)
@@ -99,10 +106,4 @@ class Swiita{
         }.resume()
     }
     
-    deinit {
-        // オブザーバーを消す
-        if let notifyProtocol = self.notifyProtocol {
-            NotificationCenter.default.removeObserver(notifyProtocol)
-        }
-    }
 }

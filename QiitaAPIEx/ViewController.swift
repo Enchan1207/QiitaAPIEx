@@ -14,10 +14,11 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var authorizeLabel: UILabel!
     
     private var token: AccessToken?
-    private let qiitaKit = Swiita()
+    private var swiita: Swiita?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.swiita = Swiita(clientid: "bf0f661c452a2c20fe9f81c4a87225a76b84adb1", clientsecret: "7367b74ae862bea330f45ccd2ff8269ed8e451a1", tokenString: nil)
         
     }
     
@@ -38,7 +39,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     
     @IBAction func onTapAuthorize(_ sender: Any) {
-        self.qiitaKit.authorize(presentViewController: self, scope: "read_qiita+write_qiita", success: { (token) in
+        self.swiita?.authorize(presentViewController: self, authority: [.read, .write], success: { (token) in
             print(token)
         }) { (error) in
             print(error)

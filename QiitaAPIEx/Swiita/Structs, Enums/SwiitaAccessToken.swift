@@ -10,6 +10,6 @@ import Foundation
 
 struct AccessToken: Codable {
     let client_id: String
-    let scopes: [String]
+    let scopes: [qiitaAPIAuthority]
     let token: String
 }
