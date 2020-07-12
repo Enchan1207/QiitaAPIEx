@@ -1,5 +1,5 @@
 //
-//  SwiitaScope.swift
+//  SwiitaAuthority.swift - アプリがAPIに要求する権限
 //  QiitaAPIEx
 //
 //  Created by EnchantCode on 2020/07/10.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum qiitaAPIAuthority: String, Codable {
+public enum qiitaAPIAuthority: String, Codable {
     case read = "read_qiita"
     case write = "write_qiita"
     case readTeam = "read_qiita_team"

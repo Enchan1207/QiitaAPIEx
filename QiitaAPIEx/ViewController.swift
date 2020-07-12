@@ -13,36 +13,45 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     @IBOutlet weak var authorizeLabel: UILabel!
     
-    private var token: AccessToken?
+    private var token: String?
     private var swiita: Swiita?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.swiita = Swiita(clientid: "bf0f661c452a2c20fe9f81c4a87225a76b84adb1", clientsecret: "7367b74ae862bea330f45ccd2ff8269ed8e451a1", tokenString: nil)
-        
+        self.swiita = Swiita(clientid: "bf0f661c452a2c20fe9f81c4a87225a76b84adb1", clientsecret: "7367b74ae862bea330f45ccd2ff8269ed8e451a1", token: nil)
     }
-    
-    // ストック取得
-    func getStock(page: Int, order: Int = 20){
-        let url = URL(string: "https://qiita.com/api/v2/users/Enchan/stocks?page=\(page)&per_page=\(order)")
-        var request = URLRequest(url: url!)
-        request.setValue("Bearer \(self.token!.token)", forHTTPHeaderField: "Authorization")
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if (error == nil) {
-                DispatchQueue.main.sync {
-                    self.authorizeLabel.text = String(data: data!, encoding: .utf8)
-                }
-            }
-        }.resume()
-    }
-    
     
     @IBAction func onTapAuthorize(_ sender: Any) {
-        self.swiita?.authorize(presentViewController: self, authority: [.read, .write], success: { (token) in
-            print(token)
-        }) { (error) in
-            print(error)
+        if let _ = self.token, let swiita = self.swiita {
+//            swiita.getStock(page: 1, success: { (json) in
+//                print(json)
+//            }, failure: { (error) in
+//                print(error)
+//            })
+            
+//            swiita.removeStock(id: "8134edf969f9629fa66e", success: { () in
+//            }) { (error) in
+//                print(error)
+//            }
+//
+//            swiita.addStock(id: "8134edf969f9629fa66e", success: { () in
+//            }) { (error) in
+//                print(error)
+//            }
+            swiita.isStocked(itemid: "", success: { (status, json) in
+                print(status)
+            }) { (error) in
+                print(error)
+            }
+            
+        } else {
+            
+            self.swiita?.authorize(presentViewController: self, authority: [.read, .write], success: { (token) in
+                self.token = token
+                self.swiita = Swiita(clientid: "bf0f661c452a2c20fe9f81c4a87225a76b84adb1", clientsecret: "7367b74ae862bea330f45ccd2ff8269ed8e451a1", token: self.token)
+            }) { (error) in
+                print(error)
+            }
         }
     }
     

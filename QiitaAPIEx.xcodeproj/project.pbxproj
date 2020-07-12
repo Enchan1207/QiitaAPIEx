@@ -15,12 +15,17 @@
 		9E75E7D924B5A47800CA0E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E75E7D724B5A47800CA0E9B /* LaunchScreen.storyboard */; };
 		9E75E7E424B5A47800CA0E9B /* QiitaAPIExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7E324B5A47800CA0E9B /* QiitaAPIExTests.swift */; };
 		9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */; };
-		9E75E7F124B5EC9300CA0E9B /* SwiitaAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E7F024B5EC9300CA0E9B /* SwiitaAccessToken.swift */; };
 		9E75E87024B7DDDE00CA0E9B /* Swiita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */; };
 		9E75E87224B83F7800CA0E9B /* NotificationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87124B83F7800CA0E9B /* NotificationExt.swift */; };
 		9E75E87524B8679F00CA0E9B /* SwiitaAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87424B8679F00CA0E9B /* SwiitaAuth.swift */; };
 		9E75E87724B8A79100CA0E9B /* SwiitaAuthority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87624B8A79100CA0E9B /* SwiitaAuthority.swift */; };
 		9E75E87924B9224000CA0E9B /* URLExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87824B9224000CA0E9B /* URLExt.swift */; };
+		9E75E87D24B96A3A00CA0E9B /* SwiitaStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87C24B96A3A00CA0E9B /* SwiitaStock.swift */; };
+		9E75E87F24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E87E24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift */; };
+		9E75E88124B9E5D400CA0E9B /* SwiitaLGTM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E88024B9E5D400CA0E9B /* SwiitaLGTM.swift */; };
+		9E75E88324B9EA3B00CA0E9B /* HTTPURLResponseExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E88224B9EA3B00CA0E9B /* HTTPURLResponseExt.swift */; };
+		9E75E88524B9EBCB00CA0E9B /* HTTPStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */; };
+		9EC02F1524BBCA1600D9D077 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +51,17 @@
 		9E75E7E324B5A47800CA0E9B /* QiitaAPIExTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPIExTests.swift; sourceTree = "<group>"; };
 		9E75E7E524B5A47800CA0E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
-		9E75E7F024B5EC9300CA0E9B /* SwiitaAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaAccessToken.swift; sourceTree = "<group>"; };
 		9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiita.swift; sourceTree = "<group>"; };
 		9E75E87124B83F7800CA0E9B /* NotificationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExt.swift; sourceTree = "<group>"; };
 		9E75E87424B8679F00CA0E9B /* SwiitaAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaAuth.swift; sourceTree = "<group>"; };
 		9E75E87624B8A79100CA0E9B /* SwiitaAuthority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaAuthority.swift; sourceTree = "<group>"; };
 		9E75E87824B9224000CA0E9B /* URLExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExt.swift; sourceTree = "<group>"; };
+		9E75E87C24B96A3A00CA0E9B /* SwiitaStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaStock.swift; sourceTree = "<group>"; };
+		9E75E87E24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaAPIRequest.swift; sourceTree = "<group>"; };
+		9E75E88024B9E5D400CA0E9B /* SwiitaLGTM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaLGTM.swift; sourceTree = "<group>"; };
+		9E75E88224B9EA3B00CA0E9B /* HTTPURLResponseExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExt.swift; sourceTree = "<group>"; };
+		9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusType.swift; sourceTree = "<group>"; };
+		9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +105,6 @@
 			children = (
 				9E75E7CC24B5A47300CA0E9B /* AppDelegate.swift */,
 				9E75E7CE24B5A47300CA0E9B /* SceneDelegate.swift */,
-				9E75E87124B83F7800CA0E9B /* NotificationExt.swift */,
 				9E75E87324B8679200CA0E9B /* Swiita */,
 				9E75E7D024B5A47300CA0E9B /* ViewController.swift */,
 				9E75E7D224B5A47300CA0E9B /* Main.storyboard */,
@@ -120,6 +129,9 @@
 			children = (
 				9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */,
 				9E75E87424B8679F00CA0E9B /* SwiitaAuth.swift */,
+				9E75E87C24B96A3A00CA0E9B /* SwiitaStock.swift */,
+				9E75E88024B9E5D400CA0E9B /* SwiitaLGTM.swift */,
+				9E75E87E24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift */,
 				9E75E87A24B92EBE00CA0E9B /* Extensions */,
 				9E75E87B24B92EC800CA0E9B /* Structs, Enums */,
 			);
@@ -130,7 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				9E75E87824B9224000CA0E9B /* URLExt.swift */,
+				9E75E88224B9EA3B00CA0E9B /* HTTPURLResponseExt.swift */,
 				9E75E7EE24B5CC5A00CA0E9B /* StringExt.swift */,
+				9E75E87124B83F7800CA0E9B /* NotificationExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,7 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				9E75E87624B8A79100CA0E9B /* SwiitaAuthority.swift */,
-				9E75E7F024B5EC9300CA0E9B /* SwiitaAccessToken.swift */,
+				9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */,
+				9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */,
 			);
 			path = "Structs, Enums";
 			sourceTree = "<group>";
@@ -245,13 +260,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E75E88124B9E5D400CA0E9B /* SwiitaLGTM.swift in Sources */,
 				9E75E87724B8A79100CA0E9B /* SwiitaAuthority.swift in Sources */,
 				9E75E7D124B5A47300CA0E9B /* ViewController.swift in Sources */,
 				9E75E87224B83F7800CA0E9B /* NotificationExt.swift in Sources */,
+				9E75E88324B9EA3B00CA0E9B /* HTTPURLResponseExt.swift in Sources */,
 				9E75E87024B7DDDE00CA0E9B /* Swiita.swift in Sources */,
+				9E75E88524B9EBCB00CA0E9B /* HTTPStatusType.swift in Sources */,
 				9E75E7CD24B5A47300CA0E9B /* AppDelegate.swift in Sources */,
+				9EC02F1524BBCA1600D9D077 /* HTTPMethod.swift in Sources */,
 				9E75E87924B9224000CA0E9B /* URLExt.swift in Sources */,
-				9E75E7F124B5EC9300CA0E9B /* SwiitaAccessToken.swift in Sources */,
+				9E75E87F24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift in Sources */,
+				9E75E87D24B96A3A00CA0E9B /* SwiitaStock.swift in Sources */,
 				9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */,
 				9E75E87524B8679F00CA0E9B /* SwiitaAuth.swift in Sources */,
 				9E75E7CF24B5A47300CA0E9B /* SceneDelegate.swift in Sources */,

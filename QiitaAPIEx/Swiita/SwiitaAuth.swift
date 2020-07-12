@@ -1,5 +1,5 @@
 //
-//  SwiitaAuth.swift
+//  SwiitaAuth.swift - ユーザ認証 /access_tokens/
 //  QiitaAPIEx
 //
 //  Created by EnchantCode on 2020/07/10.
@@ -32,7 +32,7 @@ extension Swiita {
     ///   - authority: the access  authority of Qiita APIs
     ///   - success: callback when authenticate succeeded.
     ///   - failure: callback when authenticate failed.
-    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, authority: [qiitaAPIAuthority], success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void){
+    func authorize(presentViewController: UIViewController?, safariDelegate: SFSafariViewControllerDelegate? = nil, authority: [qiitaAPIAuthority], success: @escaping (_ token: String) -> Void, failure: @escaping (_ error: Error) -> Void){
         
         /// TODO: CSRF対策文字列の生成方法
         let state = NSUUID().uuidString.regexReplace(pattern: "-", replace: "")
@@ -77,7 +77,7 @@ extension Swiita {
     }
     
     // code, stateからアクセストークンを引っ張る
-    internal func generateAccessToken(code: String, clientState: String, responseState:String, success: @escaping (_ token: AccessToken) -> Void, failure: @escaping (_ error: Error) -> Void) {
+    internal func generateAccessToken(code: String, clientState: String, responseState:String, success: @escaping (_ token: String) -> Void, failure: @escaping (_ error: Error) -> Void) {
         // CSRF的に問題なければ、codeを認証情報としてアクセストークンを取得
         if (state != self.state) { return }
         struct TokenRequestParams: Codable {
@@ -99,11 +99,27 @@ extension Swiita {
                 failure(error)
             }else{
                 if let accessTokenStr = String(data: data!, encoding: .utf8) {
+                    struct AccessToken: Codable {
+                        let client_id: String
+                        let scopes: [qiitaAPIAuthority]
+                        let token: String
+                    }
                     let token = try? JSONDecoder().decode(AccessToken.self, from: accessTokenStr.data(using: .utf8)!)
-                    success(token!)
+                    success(token!.token)
                 }
             }
         }.resume()
     }
     
+    /// Delete access token.
+    ///
+    /// - Parameters:
+    ///   - token: access token to delete.
+    func deleteAccessToken(
+        token: String,
+        success: SuccessCallback? = nil,
+        failure: FailCallback? = nil){
+        
+        apiRequest(apiPath: "/api/v2/access_tokens/\(token)", method: .DELETE, success: { success?($0, $1)}) {failure?($0)}
+    }
 }
