@@ -21,7 +21,7 @@ extension Swiita {
         page: Int,
         perPage: Int = 20,
         success: SuccessCallback? = nil,
-        failure:  FailCallback? = nil){
+        failure: FailCallback? = nil){
         
         let params = ["page": "\(page)", "per_page": "\(perPage)"]
         apiRequest(apiPath: "/api/v2/users/\(userid)/stocks", requestParams: params, success: { success?($0, $1)}, failure: {failure?($0)})
@@ -55,7 +55,7 @@ extension Swiita {
     /// Check the article is stocked.
     ///
     /// - Parameters:
-    ///   - id: target articles id
+    ///   - itemid: target articles id
     ///   - success: result of api request
     func isStocked(
         itemid: String,

@@ -122,4 +122,11 @@ extension Swiita {
         
         apiRequest(apiPath: "/api/v2/access_tokens/\(token)", method: .DELETE, success: { success?($0, $1)}) {failure?($0)}
     }
+    
+    /// Get authorized user.
+    func getAuthorizedUser(success: SuccessCallback? = nil,
+                           failure: FailCallback? = nil){
+        
+        apiRequest(apiPath: "/api/v2/authenticated_user", success: { success?($0, $1)}) {failure?($0)}
+    }
 }

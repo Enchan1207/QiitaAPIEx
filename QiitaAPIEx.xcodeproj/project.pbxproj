@@ -26,6 +26,11 @@
 		9E75E88324B9EA3B00CA0E9B /* HTTPURLResponseExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E88224B9EA3B00CA0E9B /* HTTPURLResponseExt.swift */; };
 		9E75E88524B9EBCB00CA0E9B /* HTTPStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */; };
 		9EC02F1524BBCA1600D9D077 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */; };
+		9EC02F1724BE66BD00D9D077 /* SwiitaComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1624BE66BD00D9D077 /* SwiitaComment.swift */; };
+		9EC02F1924BEB5C700D9D077 /* SwiitaCommentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1824BEB5C700D9D077 /* SwiitaCommentStruct.swift */; };
+		9EC02F1B24BEB66C00D9D077 /* SwiitaArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1A24BEB66C00D9D077 /* SwiitaArticle.swift */; };
+		9EC02F1D24BEBBFE00D9D077 /* SwiitaArticleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1C24BEBBFE00D9D077 /* SwiitaArticleStruct.swift */; };
+		9EC02F1F24BEBCB800D9D077 /* SwiitaTagStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC02F1E24BEBCB800D9D077 /* SwiitaTagStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,11 @@
 		9E75E88224B9EA3B00CA0E9B /* HTTPURLResponseExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExt.swift; sourceTree = "<group>"; };
 		9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusType.swift; sourceTree = "<group>"; };
 		9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		9EC02F1624BE66BD00D9D077 /* SwiitaComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaComment.swift; sourceTree = "<group>"; };
+		9EC02F1824BEB5C700D9D077 /* SwiitaCommentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaCommentStruct.swift; sourceTree = "<group>"; };
+		9EC02F1A24BEB66C00D9D077 /* SwiitaArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaArticle.swift; sourceTree = "<group>"; };
+		9EC02F1C24BEBBFE00D9D077 /* SwiitaArticleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaArticleStruct.swift; sourceTree = "<group>"; };
+		9EC02F1E24BEBCB800D9D077 /* SwiitaTagStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiitaTagStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,8 @@
 			children = (
 				9E75E86F24B7DDDE00CA0E9B /* Swiita.swift */,
 				9E75E87424B8679F00CA0E9B /* SwiitaAuth.swift */,
+				9EC02F1624BE66BD00D9D077 /* SwiitaComment.swift */,
+				9EC02F1A24BEB66C00D9D077 /* SwiitaArticle.swift */,
 				9E75E87C24B96A3A00CA0E9B /* SwiitaStock.swift */,
 				9E75E88024B9E5D400CA0E9B /* SwiitaLGTM.swift */,
 				9E75E87E24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift */,
@@ -153,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				9E75E87624B8A79100CA0E9B /* SwiitaAuthority.swift */,
+				9EC02F1824BEB5C700D9D077 /* SwiitaCommentStruct.swift */,
+				9EC02F1C24BEBBFE00D9D077 /* SwiitaArticleStruct.swift */,
+				9EC02F1E24BEBCB800D9D077 /* SwiitaTagStruct.swift */,
 				9E75E88424B9EBCB00CA0E9B /* HTTPStatusType.swift */,
 				9EC02F1424BBCA1600D9D077 /* HTTPMethod.swift */,
 			);
@@ -264,17 +279,22 @@
 				9E75E87724B8A79100CA0E9B /* SwiitaAuthority.swift in Sources */,
 				9E75E7D124B5A47300CA0E9B /* ViewController.swift in Sources */,
 				9E75E87224B83F7800CA0E9B /* NotificationExt.swift in Sources */,
+				9EC02F1924BEB5C700D9D077 /* SwiitaCommentStruct.swift in Sources */,
 				9E75E88324B9EA3B00CA0E9B /* HTTPURLResponseExt.swift in Sources */,
 				9E75E87024B7DDDE00CA0E9B /* Swiita.swift in Sources */,
+				9EC02F1724BE66BD00D9D077 /* SwiitaComment.swift in Sources */,
 				9E75E88524B9EBCB00CA0E9B /* HTTPStatusType.swift in Sources */,
 				9E75E7CD24B5A47300CA0E9B /* AppDelegate.swift in Sources */,
 				9EC02F1524BBCA1600D9D077 /* HTTPMethod.swift in Sources */,
 				9E75E87924B9224000CA0E9B /* URLExt.swift in Sources */,
 				9E75E87F24B9ADCC00CA0E9B /* SwiitaAPIRequest.swift in Sources */,
 				9E75E87D24B96A3A00CA0E9B /* SwiitaStock.swift in Sources */,
+				9EC02F1F24BEBCB800D9D077 /* SwiitaTagStruct.swift in Sources */,
 				9E75E7EF24B5CC5A00CA0E9B /* StringExt.swift in Sources */,
+				9EC02F1D24BEBBFE00D9D077 /* SwiitaArticleStruct.swift in Sources */,
 				9E75E87524B8679F00CA0E9B /* SwiitaAuth.swift in Sources */,
 				9E75E7CF24B5A47300CA0E9B /* SceneDelegate.swift in Sources */,
+				9EC02F1B24BEB66C00D9D077 /* SwiitaArticle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

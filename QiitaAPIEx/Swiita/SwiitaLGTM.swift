@@ -14,36 +14,30 @@ extension Swiita {
     ///  - itemid: target item id.
     func isLiked(
         itemid: String,
-        success: ((_ result: String) -> Void)?,
-        failure: ((_ error: Error) -> Void)?){
+        success: SuccessCallback?,
+        failure: FailCallback?){
         
-        apiRequest(apiPath: "/api/v2/items/\(itemid)/like") { (data, response, error) in
-            if (error == nil) {
-                success?(String(data: data!, encoding: .utf8) ?? "{}")
-            }else{
-                failure?(error!)
-            }
-        }
+        apiRequest(apiPath: "/api/v2/items/\(itemid)/like", success: { success?($0, $1)}) {failure?($0)}
     }
     
+    /// Add "LGTM!" to the article.
+    /// - Parameters:
+    ///  - itemid: target article id.
     func likeArticle(itemid: String,
-                     success: ((_ result: Bool) -> Void)?,
-                     failure: ((_ error: Error) -> Void)?) {
+                     success: SuccessCallback?,
+                     failure: FailCallback?) {
         
-        apiRequest(apiPath: "/api/v2/items/\(itemid)/like", method: .PUT) { (data, response, error) in
-            let statusCode = (response as? HTTPURLResponse)?.typeOfStatusCode()
-            (error == nil) ? success?(statusCode == .Successful) : failure?(error!)
-        }
+        apiRequest(apiPath: "/api/v2/items/\(itemid)/like", method: .PUT, success: { success?($0, $1)}) {failure?($0)}
     }
     
+    /// Remove "LGTM!" to the article.
+    /// - Parameters:
+    ///  - itemid: target article id.
     func unlikeArticle(itemid: String,
-                     success: ((_ result: Bool) -> Void)?,
-                     failure: ((_ error: Error) -> Void)?) {
+                       success: SuccessCallback?,
+                       failure: FailCallback?) {
         
-        apiRequest(apiPath: "/api/v2/items/\(itemid)/like", method: .DELETE) { (data, response, error) in
-            let statusCode = (response as? HTTPURLResponse)?.typeOfStatusCode()
-            (error == nil) ? success?(statusCode == .Successful) : failure?(error!)
-        }
+        apiRequest(apiPath: "/api/v2/items/\(itemid)/like", method: .DELETE, success: { success?($0, $1)}) {failure?($0)}
     }
     
 }
