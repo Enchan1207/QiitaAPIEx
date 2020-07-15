@@ -52,8 +52,8 @@ extension Swiita {
     
     
     func getArticleByID(itemid: String,
-    success: SuccessCallback? = nil,
-    failure: FailCallback? = nil){
+                        success: SuccessCallback? = nil,
+                        failure: FailCallback? = nil){
         
         apiRequest(apiPath: "/api/v2/items/\(itemid)", success: { success?($0, $1)}) {failure?($0)}
     }
